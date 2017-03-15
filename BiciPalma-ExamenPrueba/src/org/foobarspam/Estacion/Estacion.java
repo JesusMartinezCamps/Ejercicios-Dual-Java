@@ -8,21 +8,24 @@ public class Estacion {
 	private int id = 0;
 	private String direccion = null;
 	private int numeroAnclajes = 0;
-	private Bicicleta anclajes[] = null;
+	private Bicicleta[] anclajes = null;
 	private int anclajesLibres = 0;
 	
 	
 	/*Constructor*/
 	public Estacion(int id, String direccion, int numeroAnclajes){
-		this.id = id;
+		setId(id);
 		this.direccion = direccion;
 		this.numeroAnclajes = numeroAnclajes;
 		this.anclajes = new Bicicleta[numeroAnclajes];
 	}
 
-	/*getters*/
+	/*getters y setters*/
 	public int getId(){
 		return this.id;
+	}
+	public void setId(int id){
+		this.id = id;
 	}
 	public String getDireccion(){
 		return this.direccion;
@@ -93,9 +96,17 @@ public class Estacion {
 	}
 	
 	public void retirarBicicleta(TarjetaUsuario tarjetaUsuario){
-		int contador = 1;
-		System.out.println("bicicletaRetirada: "+getAnclajes()[contador-1].getId()+" del anclaje: "+contador);
-		anclajes[0] = null;
+		int contador = 0;
+		
+		for(int i = 1 ; i<getAnclajes().length ; i++){
+			if (getAnclajes()[i] != null){
+				System.out.println("bicicletaRetirada: "+getAnclajes()[contador].getId()+" del anclaje: "+(contador+1));
+				getAnclajes()[i] = null;
+				contador += 1;
+				break;
+			}
+		}
+				
 	}
 	
 }

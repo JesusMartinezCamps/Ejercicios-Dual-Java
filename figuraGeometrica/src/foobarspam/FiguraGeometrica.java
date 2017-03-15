@@ -1,6 +1,6 @@
 package foobarspam; /*org.foobarspam.figuras*/
 
-public abstract class FiguraGeometrica {
+public abstract class FiguraGeometrica implements Drawable{
 	
 	private String nombre;
 	
@@ -13,10 +13,10 @@ public abstract class FiguraGeometrica {
 	}
 	
 	public String getNombre() {
-		return this.nombre = nombre;
+		return this.nombre;
 	}
 	
-	public void setNombre() {
+	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
 	

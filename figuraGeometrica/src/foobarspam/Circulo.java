@@ -12,6 +12,10 @@ public class Circulo extends FiguraGeometrica{
 		super();
 	}
 
+	public Circulo(String nombre, double radio){
+		super(nombre);
+		this.radio = radio;
+	}
 	/*Constructor con el parametro de radio*/
 	public Circulo(double radio) {
 		super();
@@ -29,5 +33,11 @@ public class Circulo extends FiguraGeometrica{
 	@Override
 	public double area() {
 		return pi * getRadio() * getRadio();
+	}
+	public void draw(){
+		System.out.println("El "+ this.nombre +" se ha dibujado");
+	}
+	public void aplicarTema(){
+		System.out.println("El "+ this.nombre +" tiene un tema bien bonito");
 	}
 }

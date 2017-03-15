@@ -3,8 +3,8 @@ package foobarspam; /*org.foobarspam.figuras*/
 public class Rectangulo extends FiguraGeometrica {
 	
 	/*Variables y constantes*/
-	private double altura = 4;
-	private double anchura = 3;
+	private double altura = 0d;
+	private double anchura = 0d;
 	private String nombre = "Rectangulo";
 	
 	/*Constructor sin parametros*/
@@ -18,7 +18,6 @@ public class Rectangulo extends FiguraGeometrica {
 		this.altura = altura;
 		this.anchura = anchura;
 	}
-	
 	/*Constructor con los dos parametros más el string de nombre*/
 	public Rectangulo(String nombre, double altura, double anchura) {
 		super(nombre);
@@ -31,27 +30,28 @@ public class Rectangulo extends FiguraGeometrica {
 		return this.altura;
 	}
 	
+	public void setAltura(double altura){
+		this.altura = altura;
+	}
+	
 	public double getAnchura() {
 		return this.anchura;
 	}
 	
-	public String getNombre(){
-		return this.nombre;
-	}
-	/*
-	 * public void setAltura(double altura){
-		this.altura = altura; 
-	}
-	*/
-	
-	/*
-	 * public void setAnchura(double anchura){
+	public void setAnchura(double anchura){
 		this.anchura = anchura;
 	}
-	*/
 	
 	@Override
 	public double area() {
 		return getAltura() * getAnchura();
+	}
+	
+	public void draw(){
+		System.out.println("El "+ this.nombre +" se ha dibujado");
+	}
+	
+	public void aplicarTema(){
+		System.out.println("El "+ this.nombre +" tiene un tema bien bonito");
 	}
 }

@@ -13,6 +13,12 @@ public class Elipse extends FiguraGeometrica {
 		super();
 	}
 	
+	public Elipse(String nombre, double ejeMenor, double ejeMayor){
+		super(nombre);
+		this.ejeMenor = ejeMenor;
+		this.ejeMayor = ejeMayor;
+	}
+	
 	public Elipse(double ejeMenor, double ejeMayor) {
 		super();
 		this.ejeMenor = ejeMenor;
@@ -30,8 +36,19 @@ public class Elipse extends FiguraGeometrica {
 	public String getNombre() {
 		return this.nombre;
 	}
+	
+	public void setEjeMenor(double ejeMenor){
+		this.ejeMenor = ejeMenor;
+	}
+	public void setEjeMayor(double ejeMayor){
+		this.ejeMayor = ejeMayor;
+	}
 	@Override
 	public double area() {
 		return pi * getEjeMenor() * getEjeMayor();
+	}
+	
+	public void draw(){
+		System.out.println("El "+ this.nombre +" se ha dibujado");
 	}
 }

@@ -3,7 +3,7 @@ package foobarspam;
 public class Cuadrado extends FiguraGeometrica {
 
 	/*Variables y constantes*/
-	private double lado = 5;
+	private double lado = 0d;
 	private final String nombre = "Cuadrado";
 		
 	/*Constructor sin parametros*/
@@ -17,18 +17,30 @@ public class Cuadrado extends FiguraGeometrica {
 		this.lado = lado;
 	}
 
+	public Cuadrado(String nombre, double lado){
+		super(nombre);
+		this.lado = lado;
+	}
 	/*Metodo que devuelve el lado*/
 	public double getLado() {
 		return this.lado;
 	}
 	
-	public String getNombre() {
-		return this.nombre;
+	public void setLado(double lado) {
+		this.lado = lado;
 	}
 	
 	@Override
 	public double area() {
 		return getLado() * getLado();
+	}
+	
+	public void draw(){
+		System.out.println("El "+ this.nombre +" se ha dibujado");
+	}
+	
+	public void aplicarTema(){
+		System.out.println("El "+ this.nombre +" tiene un tema bien bonito");
 	}
 	
 }
