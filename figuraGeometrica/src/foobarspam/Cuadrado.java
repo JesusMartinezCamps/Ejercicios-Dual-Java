@@ -39,6 +39,7 @@ public class Cuadrado extends FiguraGeometrica {
 		System.out.println("El "+ this.nombre +" se ha dibujado");
 	}
 	
+	@Override
 	public void aplicarTema(){
 		System.out.println("El "+ this.nombre +" tiene un tema bien bonito");
 	}

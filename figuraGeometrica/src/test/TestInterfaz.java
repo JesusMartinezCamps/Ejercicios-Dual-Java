@@ -14,17 +14,21 @@ public class TestInterfaz {
 	
 	@BeforeClass
 	public static void setUpBeforeClass(){
+		
 		figuras = new ArrayList<>();
+		
 		Rectangulo rectangulo1 = new Rectangulo("rectangulo",3, 4);
 		Circulo circulo = new Circulo("circulo",5);
 		Cuadrado cuadrado = new Cuadrado("cuadrado",4);
 		Elipse elipse = new Elipse("elipse",3, 5);
 		Rectangulo rectangulo2 = new Rectangulo(7, 5);
+		
 		figuras.add(rectangulo1);
 		figuras.add(rectangulo2);
 		figuras.add(circulo);
 		figuras.add(cuadrado);
 		figuras.add(elipse);
+		
 		assertEquals(5, figuras.size());
 	}
 	

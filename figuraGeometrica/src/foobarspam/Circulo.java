@@ -30,6 +30,7 @@ public class Circulo extends FiguraGeometrica{
 	public String getNombre() {
 		return this.nombre;
 	}
+	
 	@Override
 	public double area() {
 		return pi * getRadio() * getRadio();
@@ -37,6 +38,8 @@ public class Circulo extends FiguraGeometrica{
 	public void draw(){
 		System.out.println("El "+ this.nombre +" se ha dibujado");
 	}
+	
+	@Override
 	public void aplicarTema(){
 		System.out.println("El "+ this.nombre +" tiene un tema bien bonito");
 	}

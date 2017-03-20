@@ -11,13 +11,13 @@ public class Drawables {
 	}
 	
 	public static void elegirTema(ArrayList<Drawable> figuras){
-		try {
-		for (Drawable figura : figuras) {
-			figura.aplicarTema();
-		}
-		}
-		catch (UnsupportedOperationException e) {
-			System.out.println("Error capturado: No puede tener un tema");
+		
+		for(Drawable figura : figuras){
+			try{
+				figura.aplicarTema();
+			}catch (UnsupportedOperationException e){
+				System.out.println("Error capturado: No puede tener un tema");
+			}
 		}
 	}
 }
