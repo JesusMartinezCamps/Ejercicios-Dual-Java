@@ -87,7 +87,7 @@ public class Validacion{
 		System.out.println("\nTercer caso test, crear los DNIs con 8 dígitos al azar y una letra Incorrecta\n");
 
 		char[] poolLetrasErroneas = {'I','O','U','Ñ'};
-		int numeroDeDNIs = 20 ;
+		int numeroDeDNIs = 10 ;
 		ArrayList<String> casosTestErroneos = new ArrayList<>();
 		
 		
@@ -107,10 +107,43 @@ public class Validacion{
 			Matcher match = p.matcher(dni);
 			
 			if (match.find()) {
-				System.out.println(numeroDni+dni + " ");
-			}
+				String cadenaRegex = match.group();
+				System.out.println(numeroDni+" "+dni + "Fallado ");
+			}System.out.println( numeroDni +" "+dni+ " Pasado, el regex no encuentra coincidencia");
 			
 		}
+		//Cuarto caso Test, crear los NIEs incorrectos
+		System.out.println("\nCuarto caso test, crear los NIEs incorrectos\n");
+		char[] letrasNIEpermitidas = {'Y','X','Z'};
 		
+		ArrayList<String> casosTestNieFail = new ArrayList<>();
+		int numeroNIEs = 10;
+		String caso = "";
+		for(int i = 1; i <= numeroNIEs; i++){
+			
+			caso = "" + letrasNIEpermitidas[ ThreadLocalRandom.current().nextInt(0, 3) ];
+			
+			for(int j = 1; j < 8; j++){
+				Integer caracterAscii = ThreadLocalRandom.current().nextInt(48, 58); // 58 se excluye
+				caso = caso + String.valueOf( Character.toChars(caracterAscii) );
+			}
+			
+			caso = caso + poolLetrasErroneas[ ThreadLocalRandom.current().nextInt(0, 4) ];
+			casosTestNieFail.add(caso);
+		}
+		
+		// Se recorren los casos test
+		
+		for(String casoFail : casosTestNieFail){
+						
+			Matcher match = p.matcher(casoFail);
+						
+			if(match.find()){
+				 String cadenaMatchingRegex = match.group();
+				 System.out.println(cadenaMatchingRegex + " regex FAIL");
+			}
+			else System.out.println( casoFail + " El regex ha corregido el NIE correctamente"); 
+		}
+
 	}
 }
