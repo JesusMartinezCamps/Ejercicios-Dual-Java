@@ -78,7 +78,7 @@ public class PracticaSetmana2ApplicationTests {
 	 * ha de respondre amb el telefon del contacte amb id passat com a paràmetre (xx)
 	 */
 	@Test
-	public void test_obte_telefon() throws Exception {
+	public void º() throws Exception {
 		mockMvc.perform(get("/telefon?id=lin"))
 				.andExpect(status().isOk())
 				.andExpect(content().string("971-555888"));
