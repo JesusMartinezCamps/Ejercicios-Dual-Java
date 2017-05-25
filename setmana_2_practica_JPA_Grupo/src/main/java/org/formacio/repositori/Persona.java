@@ -7,11 +7,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-@Entity
+@Entity // indico que esta es la entidad de mi BBDD
 @XmlRootElement // per a que acepti peticions XML
 public class Persona {
 
-	@Id
+	@Id // indico que esta propiedad es la primary key
 	private String clau;
 	@JsonProperty("contacte")
 	private String nom;
@@ -19,7 +19,7 @@ public class Persona {
 	
 	@ManyToOne
 	private Grupo grupo;
-		
+	
 	public Persona() {
 	}
 
@@ -29,7 +29,7 @@ public class Persona {
 		this.telefon = telefon;
 		this.grupo = grupo;
 	}
-	
+
 	public String getClau() {
 		return clau;
 	}
@@ -37,7 +37,7 @@ public class Persona {
 	public void setClau(String clau) {
 		this.clau = clau;
 	}
-	
+
 	public String getNom() {
 		return nom;
 	}
@@ -57,4 +57,5 @@ public class Persona {
 	public void setGrupo(Grupo grupo){
 		this.grupo = grupo;
 	}
+
 }

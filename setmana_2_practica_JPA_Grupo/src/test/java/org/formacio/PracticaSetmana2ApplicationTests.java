@@ -26,7 +26,8 @@ public class PracticaSetmana2ApplicationTests {
 
 	@Autowired
 	private MockMvc mockMvc;
-		
+	
+	
 	@Autowired
 	private AgendaService agenda;
 	
@@ -49,13 +50,15 @@ public class PracticaSetmana2ApplicationTests {
 	public void setup_base_datos() throws Exception{
 		agenda.init();
 	}
-		
+	
+	
 	@After
 	public void release_base_datos() throws Exception{
 		agenda.deleteAll();
 		grupos.deleteAll();
 	}
 	
+
 	/**
 	 * Creau un controlador al package org.formacio.mvc que respongui 
 	 * a les peticions que s'especifiquen
@@ -329,7 +332,7 @@ public class PracticaSetmana2ApplicationTests {
 	}
 	
 	/*
-	 * Cambiar a una persona de grupo (actualizarlo) * 
+	 * Cambiar a una persona de grupo (actualizarlo)	 * 
 	 */	
 	
 	@Test

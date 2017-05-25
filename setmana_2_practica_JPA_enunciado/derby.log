@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Thu May 18 18:29:53 CEST 2017:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015c-1c64-e3a2-000003d161a0 
+Thu May 25 17:41:41 CEST 2017:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.13.1.1 - (1765088): instance a816c00e-015c-4045-4a8a-0000047769b8 
 on database directory memory:C:\Users\gsusm\Documents\Ejercicios-Dual-Java\Ejercicios-Dual-Java\setmana_2_practica_JPA_enunciado\testdb with class loader sun.misc.Launcher$AppClassLoader@7cca494b 
 Loaded from file:/C:/Users/gsusm/.m2/repository/org/apache/derby/derby/10.13.1.1/derby-10.13.1.1.jar
 java.vendor=Oracle Corporation

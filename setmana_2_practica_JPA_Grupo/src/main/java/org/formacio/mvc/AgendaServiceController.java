@@ -2,7 +2,6 @@ package org.formacio.mvc;
 
 
 import org.formacio.repositori.AgendaService;
-import org.formacio.repositori.Grupo;
 import org.formacio.repositori.Persona;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -45,32 +44,35 @@ public class AgendaServiceController {
 	@RequestMapping(path="/afegir", method=RequestMethod.POST)
 	@ResponseBody
 	public String afegirContacte(@RequestParam String id, @RequestParam String nom, @RequestParam String telefon, @RequestParam String grupo){
-		agenda.inserta(id, nom, telefon, grupo);
+		agenda.update(id, nom, telefon, grupo);
 		return "ok";
 	}
 	
+	/* 
+	 * Metodos mios para utilizar metodo update de la BBDD 
+	 * 
+	 * */	
+	
 	@RequestMapping(path="/actualizar", method=RequestMethod.POST)
 	@ResponseBody
-	public void actualizarPersona(@RequestParam String id, @RequestParam String nom, @RequestParam String telefon, @RequestParam String grupo){
-		/*if(agenda.recupera(id) != null){
-			Persona provisional = agenda.recupera(id);
-			provisional.setNom(nom);
-			provisional.setTelefon(telefon);
-			
-			agenda.insertaPersonaObjeto(provisional);
-		}else{
-			agenda.inserta(id, nom, telefon);
-		}*/
-		agenda.inserta(id, nom, telefon, grupo);
-	}
-
-	@RequestMapping(path="/name")
-	@ResponseBody
-	public String cambiarNombre(@RequestParam String id){
-		String nombreDeLaPersona = agenda.recupera(id).getNom();
-		return nombreDeLaPersona;
+	public String actualizarContacto(@RequestParam String id, @RequestParam String nom, @RequestParam String telefon, @RequestParam String grupo){
+		agenda.update(id, nom, telefon, grupo);
+		return "ok";
 	}
 	
+	
+	// localhost:8080/name?id=jos
+	@RequestMapping(path="/name")
+	@ResponseBody
+	public String recuperaNombre(@RequestParam String id){
+		return agenda.recupera(id).getNom();
+	}
+	
+	@RequestMapping(path="/listado")
+	@ResponseBody
+	public String listadoPersonas(){
+		return agenda.listadoPersonas();
+	}
 	
 	@RequestMapping(path="/grupos")
 	@ResponseBody
@@ -83,11 +85,6 @@ public class AgendaServiceController {
 	public String listadoPersonasGrupo(@RequestParam String grupo){
 		return agenda.listadoPersonasGrupo(grupo);
 	}
-	
-	@RequestMapping(path="/listado")
-	@ResponseBody
-	public String listadoPersonas(){
-		return agenda.listadoPersonas();
-	}
-	
+
+
 }
